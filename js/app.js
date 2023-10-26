@@ -15,8 +15,7 @@ function adicionar() {
     <span class="texto-azul">${quantidade}x</span> ${descricaoProduto} <span class="texto-azul">R$${preco}</span>
   </section>`;
 
-    valorTotal += quantidade * preco;
-    atualizaValorTotal();
+    calculaValorTotal(quantidade, preco);
   }
 }
 
@@ -24,10 +23,15 @@ function limpar() {
   while (elemCarrinho.firstChild) {
     elemCarrinho.removeChild(elemCarrinho.firstChild);
     valorTotal = 0;
-    atualizaValorTotal();
+    imprimeValorTotal();
   }
 }
 
-function atualizaValorTotal() {
+function imprimeValorTotal() {
   elemValorTotal.textContent = `R$${valorTotal}`;
+}
+
+function calculaValorTotal(qtd, preco) {
+  valorTotal += qtd * preco;
+  imprimeValorTotal();
 }
