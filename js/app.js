@@ -1,3 +1,4 @@
+//Captura elementos HTML
 let elemCarrinho = document.getElementById("lista-produtos");
 let elemValorTotal = document.getElementById("valor-total");
 let valorTotal = parseFloat(elemValorTotal.textContent.replace("R$", ""));
