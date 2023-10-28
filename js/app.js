@@ -8,7 +8,7 @@ let elemCarrinho = document.getElementById("lista-produtos");
 let elemValorTotal = document.getElementById("valor-total");
 let valorTotal = 0;
 
-calculaValorTotal(0, 0);
+calculaValorTotal(0);
 
 function adicionar() {
   let elemProduto = document.getElementById("produto").value.split(" - R$");
@@ -32,10 +32,10 @@ function adicionar() {
 function limpar() {
   while (elemCarrinho.firstChild) {
     elemCarrinho.removeChild(elemCarrinho.firstChild);
-    valorTotal = 0;
-    imprimeValorTotal();
-    limpaQuantidade("quantidade");
   }
+  valorTotal = 0;
+  imprimeValorTotal();
+  limpaQuantidade("quantidade");
 }
 
 function imprimeValorTotal() {
